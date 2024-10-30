@@ -1,4 +1,4 @@
-package org.example;
+package com.junit;
 
 public class CalculateFair {
     double costPerKiloMeter = 10.0;
