@@ -3,21 +3,21 @@ package com.junit;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CalculateFairTest {
-    CalculateFair calculateFair = new CalculateFair();
+public class InvoiceGeneratorTest {
+    InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 
     @Test
-    public void findFare() {
+    public void ReturnTotalFare() {
         double distance = 5;
         double time = 20;
         int expected = 70;
-        int actual = (int) calculateFair.calculateAmount(distance, time);
+        int actual = (int) invoiceGenerator.calculateFare(distance, time);
         Assert.assertEquals(expected, actual);
 
         distance = 0.5;
         time = 0.2;
         expected = 5;
-        actual = (int) calculateFair.calculateAmount(distance, time);
+        actual = (int) invoiceGenerator.calculateFare(distance, time);
         Assert.assertEquals(expected, actual);
     }
 }
