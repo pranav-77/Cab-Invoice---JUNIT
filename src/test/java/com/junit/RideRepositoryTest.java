@@ -8,8 +8,8 @@ public class RideRepositoryTest {
     @Test
     public void testAddAndGetRides() {
         RideRepository rideRepository = new RideRepository();
-        Ride ride1 = new Ride(5.0, 20.0);
-        Ride ride2 = new Ride(3.0, 10.0);
+        Ride ride1 = new Ride(5.0, 20.0,"NORMAL");
+        Ride ride2 = new Ride(3.0, 10.0,"PREMIUM");
 
         rideRepository.addRides("user1", List.of(ride1, ride2));
 
