@@ -28,7 +28,7 @@ public class InvoiceGeneratorTest {
                 new Ride(3.0, 10.0),
                 new Ride(0.5, 0.2)
         };
-        int expected = 5 * 10 + 20 * 1 + 3 * 10 + 10 * 1 + 5;
+        int expected = 5 * 10 + 20 + 3 * 10 + 10 + 5;
         int actual = (int) invoiceGenerator.calculateFareForMultipleRides(rides);
         Assert.assertEquals(expected, actual);
     }
@@ -46,6 +46,8 @@ public class InvoiceGeneratorTest {
 
         InvoiceSummary expected = new InvoiceSummary(3, expectedTotalFare);
         InvoiceSummary actual = invoiceGenerator.calculateEnhancedInvoice(rides);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected.getTotalRides(), actual.getTotalRides());
+        Assert.assertEquals(expected.getTotalFare(), actual.getTotalFare(), 0.0);
+        Assert.assertEquals(expected.getAverageFare(), actual.getAverageFare(), 0.0);
     }
 }
